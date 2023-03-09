@@ -12,7 +12,8 @@ public class CookEasi {
 
         switch (choice) {
             case 1:
-                System.out.println("You chose option 1.0");
+            	//this is the test for the recipe name, havent figured out how to connect the interface yet!
+            	testRecipe.testRecipe();
                 break;
             case 2:
                 System.out.println("You chose option 2");
