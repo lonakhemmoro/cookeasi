@@ -1,7 +1,5 @@
 package cookeasi;
 
-import java.util.ArrayList;
-
 public class Recipe {
 	
 	private String name;
@@ -12,7 +10,6 @@ public class Recipe {
 		this.name = name;
 		this.ingredients = ingredients;
 		this.directions = directions;
-		
 	}
 	
 	public String getName() {
