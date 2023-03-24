@@ -1,0 +1,81 @@
+package cookeasi;
+
+import java.util.Scanner;
+import java.util.*;
+import cookeasi.CookBook;
+
+public class CookEasi {
+
+	public static void main(String[] args) 
+	{
+        Scanner scanner = new Scanner(System.in);
+        Scanner IngredInput = new Scanner(System.in); //scanner to take in the ingredients
+       
+
+        
+        CookBook cookBook = new CookBook();
+        
+        boolean match = false;
+        
+       
+        
+        
+
+        System.out.println("How many ingredients do you have: ");
+        int choice = scanner.nextInt();
+        
+        
+        String [] ingred = new String [choice]; //array to hold user inputed ingredients
+        
+        
+        System.out.println("You have " + choice + " ingredients");
+        System.out.println();
+        
+        for (int i = 0; i < choice; i++)    //allows user to add all their ingredients
+        {
+        	System.out.println("Enter Ingredient #" + (i + 1));
+        	String ingredient = IngredInput.nextLine();	
+        	ingred[i] = ingredient; //avoid null
+        	
+        } 
+        
+        
+       
+        for (int i = 0; i < ingred.length; i++)
+        {
+        	match = false;
+            for (int j = 0; j < cookBook.recipeList.size(); j++) 
+            {
+            	 String[] recipeIngredients = cookBook.recipeList.get(j).getIngredients();
+               
+            	 
+                     if (ingred[i].equalsIgnoreCase(recipeIngredients[j]))
+                     {
+                    	 match = true; 
+		                System.out.println();
+		                System.out.println("Based on your ingredients, you should make: \n" + cookBook.recipeList.get(j).getName() + "\n");
+		                
+		                
+		
+		                System.out.println("\nDIRECTIONS:");
+		                System.out.println(cookBook.recipeList.get(j).getDirections());
+		                
+		                
+		                break;
+                    }  
+                   
+              
+            }
+            
+            	
+        }
+        
+        if (match) { //if match is still false
+            System.out.println("Sorry, the ingredients you've entered do not match anything in our database.");
+        }
+
+        
+        
+}
+
+	}
