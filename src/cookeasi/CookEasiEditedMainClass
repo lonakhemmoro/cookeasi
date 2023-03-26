@@ -46,10 +46,10 @@ public class CookEasiEditedMainClass {
         	match = false;
             for (int j = 0; j < cookBook.recipeList.size(); j++) 
             {
-            	 String[] recipeIngredients = cookBook.recipeList.get(j).getIngredients();
+            	 String[] recipeIngredients = cookBook.recipeList.get(j).getIngredients(); //Source: Chat GPT
                
             	 
-                     if (ingred[i].equalsIgnoreCase(recipeIngredients[j]))
+                     if (ingred[i].equalsIgnoreCase(recipeIngredients[j])) //to compare our 2 string arrays
                      {
                     	 match = true; 
 		                System.out.println();
