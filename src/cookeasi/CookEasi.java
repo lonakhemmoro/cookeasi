@@ -1,5 +1,6 @@
 package cookeasi;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class CookEasi {
@@ -15,8 +16,15 @@ public class CookEasi {
         switch (choice) {
             case 1:
                 System.out.println("You chose option 1.0");
-                //testing that a recipe direction prints out
+                //first, check fridge, then get a recipe from the fridge ingredients
                 System.out.println(cookBook.recipeList.get(0).getDirections());
+			try {
+				Operator operator = new Operator();
+				operator.run();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
                 break;
             case 2:
                 System.out.println("You chose option 2");

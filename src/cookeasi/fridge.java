@@ -1,4 +1,4 @@
-package Fridgex;
+package cookeasi;
 
 import java.io.IOException;
 
