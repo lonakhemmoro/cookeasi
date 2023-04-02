@@ -78,7 +78,7 @@ public class CookBook {
 				
 		recipeList.add(veggieWrap);
 		
-		String[] lentilSoupIngredients = {"olive oil", "onion", "carrots", "celery", "dired lentils", "vegetable broth", "tomatoes", "cumin", "paprika", "salt", "pepper"};
+		String[] lentilSoupIngredients = {"olive oil", "onion", "carrots", "celery", "dried lentils", "vegetable broth", "tomatoes", "cumin", "paprika", "salt", "pepper"};
 		Recipe lentilSoup = new Recipe (
 				"Lentil Soup",
 				lentilSoupIngredients,
@@ -94,7 +94,7 @@ public class CookBook {
 		recipeList.add(lentilSoup);
 		
 		
-		String[] bakedSalmonIngredients = {"salmon", "salt", "pepper", "honey", "soy sauce", "mincee garlic", "minced ginger"};
+		String[] bakedSalmonIngredients = {"salmon", "salt", "pepper", "honey", "soy sauce", "minced garlic", "minced ginger"};
 		Recipe bakedSalmon = new Recipe (
 				"Baked Salmon",
 				bakedSalmonIngredients, 
@@ -108,7 +108,7 @@ public class CookBook {
 				
 		recipeList.add(bakedSalmon);
 		
-		String[] spaghettiBologneseIngredients = {"spaghetti", "olive oil", "onions", "carrots", "celery", "gorund beeef", "can of crushed tomatoes", "dired basil", "dired oregano"};
+		String[] spaghettiBologneseIngredients = {"spaghetti", "olive oil", "onions", "carrots", "celery", "ground beef", "can of crushed tomatoes", "dried basil", "dried oregano"};
 		Recipe spaghettiBolognese = new Recipe (
 				"Spaghetti Bolognese",
 				spaghettiBologneseIngredients,
