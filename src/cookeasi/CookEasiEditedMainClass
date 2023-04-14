@@ -1,15 +1,28 @@
 package cookeasi;
 
 import java.util.Scanner;
+
 import java.util.*;
 import cookeasi.CookBook;
+import cookeasi.fridgeItinerary;
+import cookeasi.fridgeItinerary.Ingredient;
 
-public class CookEasiEditedMainClass {
+public class CookEasi {
 
 	public static void main(String[] args) 
 	{
         Scanner scanner = new Scanner(System.in);
         Scanner IngredInput = new Scanner(System.in); //scanner to take in the ingredients
+        
+        
+        Scanner quantity = new Scanner(System.in); // scanner to take in the quantity of the ingredients
+        Scanner edit = new Scanner(System.in); // scanner to take in the quantity of the ingredients
+
+        fridgeItinerary fridge = new fridgeItinerary(); // create an instance of the fridgeItinerary class
+        
+        Scanner InEdit = new Scanner(System.in); // scanner to allow user to specify whether they want to edit or delete
+        Scanner delete = new Scanner(System.in); // scanner to allow user to specify whether they want to edit or delete
+
        
 
         
@@ -33,11 +46,63 @@ public class CookEasiEditedMainClass {
         
         for (int i = 0; i < choice; i++)    //allows user to add all their ingredients
         {
-        	System.out.println("Enter Ingredient #" + (i + 1));
-        	String ingredient = IngredInput.nextLine();	
-        	ingred[i] = ingredient; //avoid null
+        	System.out.println("Enter Ingredient #" + (i + 1)); //entering ingredient number X
         	
-        } 
+        	String ingredient = IngredInput.nextLine();	
+        	
+        	System.out.println("Enter the quantity (amt/cups/tablespoons/etc) of the ingredient: "); //quantity
+        	double ingredQuantity = quantity.nextDouble();
+
+        	fridge.addIngredient(ingredient, ingredQuantity, ""); // add the ingredient to the fridge with no measurement
+        	
+        	
+        	System.out.println("Would you like to edit your list: (Y)es or (N)o: "); //quantity
+        	String edit2 = edit.nextLine();
+        	
+        	if (edit2.equalsIgnoreCase("Y") && !edit2.equalsIgnoreCase("N"))
+        	{
+        		System.out.println("Would you like to edit the quantity or delete one of your choices: "); 
+        		String edit3 = InEdit.nextLine();
+        		
+        		
+        		
+        		if (edit3.equalsIgnoreCase("edit"))
+        		{
+        			System.out.println("Which ingredient do you want to edit: "); 
+        	        String ingredientToEdit = InEdit.nextLine();
+        	        System.out.println("Enter the new quantity (amt/cups/tablespoons/etc) of the ingredient: ");
+        	        ingredQuantity = quantity.nextDouble();
+        	        
+        	        
+   
+        			 
+        			
+        		}
+        		else if (edit3.equalsIgnoreCase("delete"))
+        		{
+        			
+        			 System.out.println("Which ingredient do you want to delete: "); 
+        		     String ingredientToDelete = delete.nextLine();
+        		     fridge.removeIngredient(ingredientToDelete);
+        		     System.out.println("Enter a new ingredient for Ingredient #" + (i + 1)); 
+        		     ingredient = IngredInput.nextLine();	
+        		     
+        		     
+        		     
+        			
+        			
+
+        			
+        			
+        		}
+        		
+        	}
+            
+            ingred[i] = ingredient; // avoid null
+            System.out.println();
+        }        	
+        
+
         
         
        
@@ -46,10 +111,10 @@ public class CookEasiEditedMainClass {
         	match = false;
             for (int j = 0; j < cookBook.recipeList.size(); j++) 
             {
-            	 String[] recipeIngredients = cookBook.recipeList.get(j).getIngredients(); //Source: Chat GPT
+            	 String[] recipeIngredients = cookBook.recipeList.get(j).getIngredients();
                
             	 
-                     if (ingred[i].equalsIgnoreCase(recipeIngredients[j])) //to compare our 2 string arrays
+                     if (ingred[i].equalsIgnoreCase(recipeIngredients[j]))
                      {
                     	 match = true; 
 		                System.out.println();
@@ -73,9 +138,18 @@ public class CookEasiEditedMainClass {
         if (match) { //if match is still false
             System.out.println("Sorry, the ingredients you've entered do not match anything in our database.");
         }
+        
 
+     
+     
         
         
 }
 
+
+      
+              
+
 	}
+
+
